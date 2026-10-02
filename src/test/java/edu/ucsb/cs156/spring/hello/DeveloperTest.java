@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.lang.reflect.Modifier;
 
 import org.junit.jupiter.api.Test;
@@ -22,9 +24,26 @@ public class DeveloperTest {
 
     @Test
     public void getName_returns_correct_name() {
-        // TODO: Replace Chris G. with your name as shown on
-        // <https://bit.ly/cs156-f26-teams>
-        assertEquals("Chris G.", Developer.getName());
+        assertEquals("Calvin", Developer.getName());
+    }
+
+    @Test
+    public void getGithubId_returns_correct_githubId() {
+        assertEquals("Cow-Van", Developer.getGithubId());
+    }
+
+    @Test
+    public void getTeam_returns_correct_team() {
+        Team expectedTeam = new Team("C Major");
+        ArrayList<String> expectedMembers = new ArrayList<String>(
+                Arrays.asList("Brandon Y", "Calvin", "Jarek", "Jovia", "Noah N", "Tara"));
+        expectedTeam.setMembers(expectedMembers);
+
+        Team actualTeam = Developer.getTeam();
+
+        assertEquals("C Major", actualTeam.getName());
+        assertEquals(expectedMembers, actualTeam.getMembers());
+        assertEquals(expectedTeam, actualTeam);
     }
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
