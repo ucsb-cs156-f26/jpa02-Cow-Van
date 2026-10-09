@@ -34,14 +34,14 @@ public class DeveloperTest {
 
     @Test
     public void getTeam_returns_correct_team() {
-        Team expectedTeam = new Team("team-f26-05");
+        Team expectedTeam = new Team("f26-05");
         ArrayList<String> expectedMembers = new ArrayList<String>(
                 Arrays.asList("Brandon Y", "Calvin", "Jarek", "Jovia", "Noah N", "Tara"));
         expectedTeam.setMembers(expectedMembers);
 
         Team actualTeam = Developer.getTeam();
 
-        assertEquals("team-f26-05", actualTeam.getName());
+        assertEquals("f26-05", actualTeam.getName());
         assertEquals(expectedMembers, actualTeam.getMembers());
         assertEquals(expectedTeam, actualTeam);
     }
